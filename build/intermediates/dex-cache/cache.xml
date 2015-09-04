@@ -9,6 +9,13 @@
         <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\classes-667370041ddb827982799e66fb0dc6ec8398c889.jar" />
     </item>
     <item
+        jar="E:\Studioxiangmu\Pingguoid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-9ac6ead154f411824fdfa8784c1209a5ba02bf2c.jar" />
+    </item>
+    <item
         jar="D:\studiosdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
@@ -21,13 +28,6 @@
         revision="23.0.0"
         sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
         <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\classes-ddd3a1c226d77e1fe7a00322e03591c846f22662.jar" />
-    </item>
-    <item
-        jar="E:\Studioxiangmu\Pingguoid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-9ac6ead154f411824fdfa8784c1209a5ba02bf2c.jar" />
     </item>
 
 </items>

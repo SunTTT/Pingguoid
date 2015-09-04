@@ -6,13 +6,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5677fc"
 
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="设备型号:"
+            android:paddingLeft="20dp"
             android:textSize="20sp"/>
         <TextView
             android:layout_width="0dp"
@@ -25,13 +25,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5677fc"
 
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:paddingLeft="20dp"
+
             android:text="IMEI:"/>
         <TextView
             android:layout_width="0dp"
@@ -46,12 +47,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5677fc"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:paddingLeft="20dp"
+
             android:text="激活状态:"/>
         <TextView
             android:layout_width="0dp"
@@ -64,12 +66,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5677fc"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:textSize="20sp"
             android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+
             android:text="保修状态:"/>
         <TextView
             android:layout_width="0dp"
@@ -83,11 +86,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5677fc"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+
             android:textSize="20sp"
             android:text="保修到期:"/>
         <TextView
@@ -102,12 +106,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5677fc"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:textSize="20sp"
             android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+
             android:text="电话支持:"/>
         <TextView
             android:layout_width="0dp"
@@ -120,11 +125,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5677fc"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+
             android:textSize="20sp"
             android:text="电话支持:"/>
         <TextView
@@ -138,11 +144,12 @@
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#5677fc"
     android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+
         android:textSize="20sp"
         android:text="生产工厂:"/>
     <TextView
@@ -157,11 +164,12 @@
    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#5677fc"
     android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+
         android:textSize="20sp"
         android:text="生产开始时间:"/>
     <TextView
@@ -176,12 +184,13 @@
    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#5677fc"
     android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
+        android:paddingLeft="20dp"
+
         android:text="生产结束时间:"/>
     <TextView
         android:layout_width="0dp"
@@ -195,12 +204,13 @@
    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#5677fc"
     android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:textSize="20sp"
         android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+
         android:text="颜色:"/>
     <TextView
         android:layout_width="0dp"
@@ -214,11 +224,12 @@
    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#5677fc"
     android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+
         android:textSize="20sp"
         android:text="规格:"/>
     <TextView
