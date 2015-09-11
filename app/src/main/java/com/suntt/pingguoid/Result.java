@@ -2,9 +2,7 @@ package com.suntt.pingguoid;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +11,12 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,8 +46,93 @@ public class Result extends Activity {
         textView.setText(id.toUpperCase());
         Log.e("json", id);
         address = new StringBuffer("http://apis.juhe.cn/appleinfo/index?sn=").append(id).append("&key=").append(key).toString();
-        IdTask task = new IdTask();
-        task.execute(address);
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        StringRequest stringRequest = new StringRequest(address, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String s) {
+                try {
+                    JSONObject jsonresult = new JSONObject(s);
+                    String resultcode = jsonresult.getString("resultcode");
+                    Log.e("json", "GETCODE");
+                    if (resultcode.equals("200")) {
+                        Log.e("json", "panduancehnggong");
+                        JSONObject apple = jsonresult.getJSONObject("result");
+                        String phone_model = apple.getString("phone_model");
+                        String serial_number = apple.getString("serial_number");
+                        String imei_number = apple.getString("imei_number");
+                        String active = apple.getString("active");
+                        String warranty_status = apple.getString("warranty_status");
+                        String warranty = apple.getString("warranty");
+
+                        String tele_support = apple.getString("tele_support");
+                        String tele_support_status = apple.getString("tele_support_status");
+
+                        String made_area = apple.getString("made_area");
+                        String start_date = apple.getString("start_date");
+                        String end_date = apple.getString("end_date");
+                        String color = apple.getString("color");
+                        String size = apple.getString("size");
+                        adapter = new myAdapter();
+                        appleExample.setPhone_model(phone_model);
+                        appleExample.setImei_number(imei_number);
+                        appleExample.setActive(active);
+                        appleExample.setWarranty(warranty);
+                        appleExample.setWarranty_status(warranty_status);
+                        appleExample.setTele_support(tele_support);
+                        appleExample.setTele_support_status(tele_support_status);
+                        appleExample.setMade_area(made_area);
+                        appleExample.setStart_date(start_date);
+                        appleExample.setEnd_date(end_date);
+                        appleExample.setColor(color);
+                        appleExample.setSize(size);
+                        list.add(appleExample);
+//                        adapter = new ArrayAdapter<String>(Result.this,android.R.layout.simple_list_item_1);
+//                        adapter.add(phone_model);
+//                        adapter.add(serial_number);
+//                        adapter.add(imei_number);
+//                        adapter.add(active);
+//                        adapter.add(warranty_status);
+//                        adapter.add(warranty);
+//                        adapter.add(tele_support);
+//                        adapter.add(tele_support_status);
+//                        adapter.add(made_area);
+//                        adapter.add(start_date);
+//                        adapter.add(end_date);
+//                        adapter.add(color);
+//                        adapter.add(size);
+//                        list.add(phone_model);
+//                        list.add(serial_number);
+//                        list.add(imei_number);
+//                        list.add(active);
+//                        list.add(warranty_status);
+//                        list.add(warranty);
+//                        list.add(tele_support);
+//                        list.add(tele_support_status);
+//                        list.add(made_area);
+//                        list.add(start_date);
+//                        list.add(end_date);
+//                        list.add(color);
+//                        list.add(size);
+                        listView.setAdapter(adapter);
+
+
+                    } else {
+                        Toast.makeText(Result.this, "JsonError", Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+
+            }
+        });
+        requestQueue.add(stringRequest);
+//        IdTask task = new IdTask();
+//        task.execute(address);
     }
 
     public class myAdapter extends BaseAdapter {
@@ -122,99 +211,99 @@ holder.phone_model.setText(littleApple.getPhone_model());
         }
     }
 
-    public class IdTask extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... strings) {
-            result = HttpUtil.sendHttpRequest(address);
-
-            return result;
-        }
-
-
-        @Override
-        protected void onPostExecute(String s) {
-
-            if (TextUtils.isEmpty(s)) {
-                Toast.makeText(Result.this, "NO RESULT", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(Result.this, "GET RESULT", Toast.LENGTH_LONG).show();
-                Log.e("json", "GETRESULT");
-                try {
-                    JSONObject jsonresult = new JSONObject(s);
-                    String resultcode = jsonresult.getString("resultcode");
-                    Log.e("json", "GETCODE");
-                    if (resultcode.equals("200")) {
-                        Log.e("json", "panduancehnggong");
-                        JSONObject apple = jsonresult.getJSONObject("result");
-                        String phone_model = apple.getString("phone_model");
-                        String serial_number = apple.getString("serial_number");
-                        String imei_number = apple.getString("imei_number");
-                        String active = apple.getString("active");
-                        String warranty_status = apple.getString("warranty_status");
-                        String warranty = apple.getString("warranty");
-
-                        String tele_support = apple.getString("tele_support");
-                        String tele_support_status = apple.getString("tele_support_status");
-
-                        String made_area = apple.getString("made_area");
-                        String start_date = apple.getString("start_date");
-                        String end_date = apple.getString("end_date");
-                        String color = apple.getString("color");
-                        String size = apple.getString("size");
-                        adapter = new myAdapter();
-                        appleExample.setPhone_model(phone_model);
-                        appleExample.setImei_number(imei_number);
-                        appleExample.setActive(active);
-                        appleExample.setWarranty(warranty);
-                        appleExample.setWarranty_status(warranty_status);
-                        appleExample.setTele_support(tele_support);
-                        appleExample.setTele_support_status(tele_support_status);
-                        appleExample.setMade_area(made_area);
-                        appleExample.setStart_date(start_date);
-                        appleExample.setEnd_date(end_date);
-                        appleExample.setColor(color);
-                        appleExample.setSize(size);
-                        list.add(appleExample);
-//                        adapter = new ArrayAdapter<String>(Result.this,android.R.layout.simple_list_item_1);
-//                        adapter.add(phone_model);
-//                        adapter.add(serial_number);
-//                        adapter.add(imei_number);
-//                        adapter.add(active);
-//                        adapter.add(warranty_status);
-//                        adapter.add(warranty);
-//                        adapter.add(tele_support);
-//                        adapter.add(tele_support_status);
-//                        adapter.add(made_area);
-//                        adapter.add(start_date);
-//                        adapter.add(end_date);
-//                        adapter.add(color);
-//                        adapter.add(size);
-//                        list.add(phone_model);
-//                        list.add(serial_number);
-//                        list.add(imei_number);
-//                        list.add(active);
-//                        list.add(warranty_status);
-//                        list.add(warranty);
-//                        list.add(tele_support);
-//                        list.add(tele_support_status);
-//                        list.add(made_area);
-//                        list.add(start_date);
-//                        list.add(end_date);
-//                        list.add(color);
-//                        list.add(size);
-                        listView.setAdapter(adapter);
-
-
-                    } else {
-                        Toast.makeText(Result.this, "JsonError", Toast.LENGTH_LONG).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        }
-    }
+//    public class IdTask extends AsyncTask<String, Void, String> {
+//
+//        @Override
+//        protected String doInBackground(String... strings) {
+//            result = HttpUtil.sendHttpRequest(address);
+//
+//            return result;
+//        }
+//
+//
+//        @Override
+//        protected void onPostExecute(String s) {
+//
+//            if (TextUtils.isEmpty(s)) {
+//                Toast.makeText(Result.this, "NO RESULT", Toast.LENGTH_LONG).show();
+//            } else {
+//                Toast.makeText(Result.this, "GET RESULT", Toast.LENGTH_LONG).show();
+//                Log.e("json", "GETRESULT");
+//                try {
+//                    JSONObject jsonresult = new JSONObject(s);
+//                    String resultcode = jsonresult.getString("resultcode");
+//                    Log.e("json", "GETCODE");
+//                    if (resultcode.equals("200")) {
+//                        Log.e("json", "panduancehnggong");
+//                        JSONObject apple = jsonresult.getJSONObject("result");
+//                        String phone_model = apple.getString("phone_model");
+//                        String serial_number = apple.getString("serial_number");
+//                        String imei_number = apple.getString("imei_number");
+//                        String active = apple.getString("active");
+//                        String warranty_status = apple.getString("warranty_status");
+//                        String warranty = apple.getString("warranty");
+//
+//                        String tele_support = apple.getString("tele_support");
+//                        String tele_support_status = apple.getString("tele_support_status");
+//
+//                        String made_area = apple.getString("made_area");
+//                        String start_date = apple.getString("start_date");
+//                        String end_date = apple.getString("end_date");
+//                        String color = apple.getString("color");
+//                        String size = apple.getString("size");
+//                        adapter = new myAdapter();
+//                        appleExample.setPhone_model(phone_model);
+//                        appleExample.setImei_number(imei_number);
+//                        appleExample.setActive(active);
+//                        appleExample.setWarranty(warranty);
+//                        appleExample.setWarranty_status(warranty_status);
+//                        appleExample.setTele_support(tele_support);
+//                        appleExample.setTele_support_status(tele_support_status);
+//                        appleExample.setMade_area(made_area);
+//                        appleExample.setStart_date(start_date);
+//                        appleExample.setEnd_date(end_date);
+//                        appleExample.setColor(color);
+//                        appleExample.setSize(size);
+//                        list.add(appleExample);
+////                        adapter = new ArrayAdapter<String>(Result.this,android.R.layout.simple_list_item_1);
+////                        adapter.add(phone_model);
+////                        adapter.add(serial_number);
+////                        adapter.add(imei_number);
+////                        adapter.add(active);
+////                        adapter.add(warranty_status);
+////                        adapter.add(warranty);
+////                        adapter.add(tele_support);
+////                        adapter.add(tele_support_status);
+////                        adapter.add(made_area);
+////                        adapter.add(start_date);
+////                        adapter.add(end_date);
+////                        adapter.add(color);
+////                        adapter.add(size);
+////                        list.add(phone_model);
+////                        list.add(serial_number);
+////                        list.add(imei_number);
+////                        list.add(active);
+////                        list.add(warranty_status);
+////                        list.add(warranty);
+////                        list.add(tele_support);
+////                        list.add(tele_support_status);
+////                        list.add(made_area);
+////                        list.add(start_date);
+////                        list.add(end_date);
+////                        list.add(color);
+////                        list.add(size);
+//                        listView.setAdapter(adapter);
+//
+//
+//                    } else {
+//                        Toast.makeText(Result.this, "JsonError", Toast.LENGTH_LONG).show();
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//        }
+//    }
 
 }

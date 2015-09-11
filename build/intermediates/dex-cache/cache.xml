@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="E:\Studioxiangmu\Pingguoid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\classes-ddd3a1c226d77e1fe7a00322e03591c846f22662.jar" />
+    </item>
+    <item
         jar="E:\Studioxiangmu\Pingguoid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.0"
@@ -9,11 +16,11 @@
         <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\classes-667370041ddb827982799e66fb0dc6ec8398c889.jar" />
     </item>
     <item
-        jar="E:\Studioxiangmu\Pingguoid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.19\a8f23f65fc1e522ee4a1a697ee569901a46741fa\library-1.0.19.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-9ac6ead154f411824fdfa8784c1209a5ba02bf2c.jar" />
+        sha1="a8f23f65fc1e522ee4a1a697ee569901a46741fa">
+        <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\library-1.0.19-78f0bb23743784ba5177d1b9659f6fa6d6a7bd06.jar" />
     </item>
     <item
         jar="D:\studiosdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
@@ -23,11 +30,11 @@
         <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-6fb48a421b1669452733fa06be91aea24ceba275.jar" />
     </item>
     <item
-        jar="E:\Studioxiangmu\Pingguoid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jar="E:\Studioxiangmu\Pingguoid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\classes-ddd3a1c226d77e1fe7a00322e03591c846f22662.jar" />
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="E:\Studioxiangmu\Pingguoid\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-9ac6ead154f411824fdfa8784c1209a5ba02bf2c.jar" />
     </item>
 
 </items>
